@@ -50,6 +50,7 @@ document.getElementById('add-btn').addEventListener('click', function(e){
     }
 });
 
+
 // HIDE ITEMS
 
 // grab the checkbox item by its id
@@ -71,7 +72,34 @@ hideItem.addEventListener('click', function(){
 });
 
 
+// SEARCH FILTER 
 
+// select search input by selecting parent element by id and then specifying child element, which is the input
+var searchInput = document.querySelector('#search-note input');
+
+// keyup triggers the event when a key is pressed/entered into the input element
+searchInput.addEventListener('keyup', function(e){
+
+    // target is the input element that the event is triggered by, this will get the value of the search input
+    var searchChar = e.target.value.toUpperCase(); //this will also translate the keys entered to upper case characters
+    
+    // gets the li elements in the ul
+    var notes = ul.getElementsByTagName('li');
+    
+    // translates the li elements from the ul to an array so they can be looped/searched through
+    Array.from(notes).forEach(function(note){
+       var parText =  note.firstElementChild.textContent;
+        
+        // translates the text in the notes to uppercase to be compared by the search filter
+        if(parText.toUpperCase().indexOf(searchChar) !== -1){ // searches the index of keys entered into search and determines if key entered matches anything on the page, -1 means the character is not present, so !== -1 means if the statement is true thenyou procede to display block
+            note.style.display = 'block';
+        } else {
+            note.style.display = 'none';
+        }
+        
+    });
+    
+});
 
 
 
