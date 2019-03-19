@@ -48,10 +48,48 @@ document.getElementById('add-btn').addEventListener('click', function(e){
     addInput.value == '';
         
     }
-    
-    
-    console.log(li)
 });
+
+// HIDE ITEMS
+
+// grab the checkbox item by its id
+var hideItem = document.getElementById('hide');
+
+// create event for when the checkbox is selected to hide items
+hideItem.addEventListener('click', function(){
+    
+    var label = document.querySelector('label');
+   
+    // create condidtional to hide items when checkbox is checked
+    if(hideItem.checked){
+        label.textContent = 'Unhide notes'; // change text to match event
+        ul.style.display = 'none'; // removes ul from display
+    } else {
+        label.textContent = 'Hide notes'; // change text back to match event
+        ul.style.display = 'block'; // brings ul back into display
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

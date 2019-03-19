@@ -28,3 +28,39 @@ header h2 {
     padding: 40px 0 20px 0;
     color: #555;
 }
+
+#add-notes {
+    padding: 60px 0;
+}
+
+#hide-list {
+    margin: 20px;
+}
+
+#hide-list label {
+    padding: 5px 10px;
+    margin: 10px;
+    border-bottom: 1px solid #777;
+    user-select: none;
+}
+
+#hide-list label:hover {
+    background: #efefef;
+}
+
+/* hide checkbox */
+#hide-list input[type='checkbox'] {
+    display: none;
+}
+
+form#add {
+    margin-top: 10px;
+    text-align: center;
+}
+
+form#add input {
+    border-radius: 2px;
+}
+
+
+
